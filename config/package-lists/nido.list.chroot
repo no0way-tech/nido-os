@@ -1,0 +1,31 @@
+# --- Avvio live ---
+live-boot
+live-config
+live-config-systemd
+
+# --- Base di sistema ---
+locales
+keyboard-configuration
+console-setup
+dbus-user-session
+polkitd
+python3
+
+# --- Interfaccia: compositor kiosk + browser ---
+cage
+firefox-esr
+firefox-esr-l10n-it
+webext-ublock-origin-firefox
+fonts-noto-core
+fonts-noto-color-emoji
+
+# --- Rete e privacy ---
+network-manager
+systemd-resolved
+nftables
+ca-certificates
+
+# --- Audio ---
+pipewire
+pipewire-pulse
+wireplumber
