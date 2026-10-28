@@ -87,9 +87,26 @@ config/includes.chroot/         file copiati così come sono nel sistema
 ## Prossime fasi
 
 1. ~~Prototipo avviabile~~ ← siamo qui
-2. Prova su più PC vecchi, aggiunta di firmware e driver mancanti
-3. Shell web più completa: impostazioni (lingua, tastiera, luminosità), gestione download, aggiornamenti
-4. Installer su disco con cifratura completa (LUKS)
+2. Versione 0.2 – correzioni e privacy rafforzata senza costi di prestazioni:
+   - ✅ Wi-Fi funzionante (wpasupplicant), utente live creato correttamente (user-setup)
+   - ✅ Ora esatta e autenticata con NTS (chrony), senza server suggeriti dal router
+   - ✅ DoH in Firefox + Encrypted Client Hello (nasconde i siti visitati al provider)
+   - ✅ Protezione antitracciamento "Rigorosa", rimozione parametri traccianti, rifiuto banner cookie, niente suggerimenti di ricerca, referrer ridotto
+   - ✅ Niente controlli di connettività verso server esterni
+   - ✅ zram al posto della swap, log di sistema solo in RAM
+   - ✅ Irrobustimento del kernel (sysctl)
+   - ✅ Decodifica video H.264 per tutti i siti
+   - Da fare: AppArmor con profilo per il browser, liste uBlock extra, MAC casuale sulle reti pubbliche, pagina "Diagnostica"
+   - *Eventuale*: "modalità anonima" opzionale con Tor Browser originale (non Tor di sistema: si perderebbe velocità e compatibilità, e un Firefox modificato su Tor è riconoscibile)
+   - Provato su: Lenovo ThinkPad E14 (2023) – avvio ok anche con Secure Boot
+3. Versione 0.3 – Nido diventa **local-first**:
+   - Memoria persistente cifrata sulla chiavetta (o installazione su disco), con la cartella Documenti
+   - App locali che funzionano offline, servite da Nido: Note (Markdown), Disegno (Excalidraw), File
+   - I dati restano file in formati aperti (Markdown, immagini, PDF): nessun blocco, nessun cloud obbligatorio
+   - Sincronizzazione facoltativa tra dispositivi con Syncthing (da pari a pari, cifrata, senza server)
+   - Più avanti: app proprie con sincronizzazione CRDT (Automerge/Yjs) per modificare gli stessi dati da più dispositivi
+   - Shell web più completa: impostazioni (lingua, tastiera, luminosità), gestione download, aggiornamenti
+4. Installer su disco con cifratura completa (LUKS; Adiantum sui PC senza accelerazione AES) e pulizia di cookie/cronologia alla chiusura
 5. Aggiornamenti automatici e sistema di sola lettura con aggiornamenti A/B
 
 ## Licenza
