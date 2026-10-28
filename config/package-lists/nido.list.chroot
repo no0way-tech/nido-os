@@ -2,6 +2,8 @@
 live-boot
 live-config
 live-config-systemd
+user-setup
+sudo
 
 # --- Base di sistema ---
 locales
